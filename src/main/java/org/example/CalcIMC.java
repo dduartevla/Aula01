@@ -1,7 +1,12 @@
+package org.example;
+
 public class CalcIMC {
 
     private double peso;
     private double altura;
+
+
+
 
     char sexo;
 
@@ -44,11 +49,11 @@ public class CalcIMC {
         return sexo;
     }
 
-    public void setSexo(char sexo) throws Exception {
+    public void setSexo(char sexo) {
         if (sexo == 'f' || sexo == 'm'){
             this.sexo = sexo;
         } else {
-            throw new Exception("Valor inválido, aceito somente f ou m!");
+            throw new IllegalArgumentException("Valor inválido, aceito somente f ou m!");
         }
 
     }
@@ -57,11 +62,11 @@ public class CalcIMC {
         return peso;
     }
 
-    public void setPeso(double peso) throws Exception {
+    public void setPeso(double peso) {
         if (peso > 0) {
             this.peso = peso;
         } else {
-            throw new Exception("Valor inválido!");
+            throw new IllegalArgumentException("Valor inválido!");
         }
     }
 
@@ -69,11 +74,11 @@ public class CalcIMC {
         return altura;
     }
 
-    public void setAltura(double altura) throws Exception {
+    public void setAltura(double altura){
         if (altura > 0) {
             this.altura = altura;
         } else {
-            throw new Exception("Valor inválido!");
+            throw new IllegalArgumentException("Valor inválido!");
         }
     }
 }
